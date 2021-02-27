@@ -15,6 +15,17 @@ class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
         Dialog.resize(601, 395)
+        Dialog.setStyleSheet(".tree-node{\n"
+"background-color: white;\n"
+"border: 5px solid black;\n"
+"border-radius: 30%;\n"
+"font-size: 45px;\n"
+"padding: 5%;\n"
+"}\n"
+"\n"
+".tree-node:hover{\n"
+"background-color: blue;\n"
+"}")
         self.gridLayout = QtWidgets.QGridLayout(Dialog)
         self.gridLayout.setObjectName("gridLayout")
         self.frame_window = QtWidgets.QFrame(Dialog)
@@ -23,23 +34,6 @@ class Ui_Dialog(object):
         self.frame_window.setObjectName("frame_window")
         self.gridLayout_3 = QtWidgets.QGridLayout(self.frame_window)
         self.gridLayout_3.setObjectName("gridLayout_3")
-        self.frame_node = QtWidgets.QFrame(self.frame_window)
-        self.frame_node.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.frame_node.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame_node.setObjectName("frame_node")
-        self.gridLayout_2 = QtWidgets.QGridLayout(self.frame_node)
-        self.gridLayout_2.setObjectName("gridLayout_2")
-        self.lineEdit_nodeName = QtWidgets.QLineEdit(self.frame_node)
-        self.lineEdit_nodeName.setAutoFillBackground(False)
-        self.lineEdit_nodeName.setInputMask("")
-        self.lineEdit_nodeName.setText("")
-        self.lineEdit_nodeName.setAlignment(QtCore.Qt.AlignCenter)
-        self.lineEdit_nodeName.setObjectName("lineEdit_nodeName")
-        self.gridLayout_2.addWidget(self.lineEdit_nodeName, 0, 0, 1, 1)
-        self.button_create_tree = QtWidgets.QPushButton(self.frame_node)
-        self.button_create_tree.setObjectName("button_create_tree")
-        self.gridLayout_2.addWidget(self.button_create_tree, 0, 1, 1, 1)
-        self.gridLayout_3.addWidget(self.frame_node, 0, 0, 1, 1)
         self.frame_tree = QtWidgets.QFrame(self.frame_window)
         self.frame_tree.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_tree.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -47,6 +41,36 @@ class Ui_Dialog(object):
         self.gridLayout_4 = QtWidgets.QGridLayout(self.frame_tree)
         self.gridLayout_4.setObjectName("gridLayout_4")
         self.gridLayout_3.addWidget(self.frame_tree, 1, 0, 1, 1)
+        self.frame_node = QtWidgets.QFrame(self.frame_window)
+        self.frame_node.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_node.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_node.setObjectName("frame_node")
+        self.gridLayout_2 = QtWidgets.QGridLayout(self.frame_node)
+        self.gridLayout_2.setObjectName("gridLayout_2")
+        self.spinBox_level = QtWidgets.QSpinBox(self.frame_node)
+        self.spinBox_level.setProperty("value", 3)
+        self.spinBox_level.setObjectName("spinBox_level")
+        self.gridLayout_2.addWidget(self.spinBox_level, 1, 4, 1, 1)
+        self.label_level = QtWidgets.QLabel(self.frame_node)
+        self.label_level.setObjectName("label_level")
+        self.gridLayout_2.addWidget(self.label_level, 1, 3, 1, 1)
+        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout_2.addItem(spacerItem, 1, 8, 1, 1)
+        self.spinBox_branchingFactor = QtWidgets.QSpinBox(self.frame_node)
+        self.spinBox_branchingFactor.setProperty("value", 2)
+        self.spinBox_branchingFactor.setObjectName("spinBox_branchingFactor")
+        self.gridLayout_2.addWidget(self.spinBox_branchingFactor, 1, 7, 1, 1)
+        spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout_2.addItem(spacerItem1, 1, 2, 1, 1)
+        self.label_branchingFactor = QtWidgets.QLabel(self.frame_node)
+        self.label_branchingFactor.setObjectName("label_branchingFactor")
+        self.gridLayout_2.addWidget(self.label_branchingFactor, 1, 6, 1, 1)
+        spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout_2.addItem(spacerItem2, 1, 5, 1, 1)
+        self.button_create_tree = QtWidgets.QPushButton(self.frame_node)
+        self.button_create_tree.setObjectName("button_create_tree")
+        self.gridLayout_2.addWidget(self.button_create_tree, 2, 6, 1, 2)
+        self.gridLayout_3.addWidget(self.frame_node, 0, 0, 1, 1)
         self.gridLayout.addWidget(self.frame_window, 0, 0, 1, 1)
 
         self.retranslateUi(Dialog)
@@ -55,7 +79,8 @@ class Ui_Dialog(object):
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "PyQt5 Starter App"))
-        self.lineEdit_nodeName.setPlaceholderText(_translate("Dialog", "Enter Node Name"))
+        self.label_level.setText(_translate("Dialog", "Level"))
+        self.label_branchingFactor.setText(_translate("Dialog", "Branching Factor"))
         self.button_create_tree.setText(_translate("Dialog", "Create Tree"))
 
 
