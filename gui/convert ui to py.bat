@@ -1,1 +1,1 @@
-pyuic5 -x main.ui -o main.py
+pyuic5 -x tree_generator.ui -o tree_generator.py

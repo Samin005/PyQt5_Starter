@@ -1,6 +1,6 @@
 import sys
-from PyQt5 import QtWidgets, QtCore
-from gui.main import Ui_Dialog
+from PyQt5 import QtWidgets, QtCore, QtGui
+from gui.tree_generator import Ui_Dialog
 
 
 def create_tree(level: int, branching_factor: int):
@@ -30,6 +30,9 @@ def create_tree(level: int, branching_factor: int):
 
 app = QtWidgets.QApplication(sys.argv)
 Dialog = QtWidgets.QDialog()
+icon = QtGui.QIcon()
+icon.addPixmap(QtGui.QPixmap("gui/tree-icon.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+Dialog.setWindowIcon(icon)
 ui = Ui_Dialog()
 ui.setupUi(Dialog)
 

@@ -11,7 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>PyQt5 Starter App</string>
+   <string>Tree Generator App</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>tree-icon.svg</normaloff>tree-icon.svg</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">.tree-node{
